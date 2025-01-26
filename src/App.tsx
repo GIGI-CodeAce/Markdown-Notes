@@ -51,7 +51,9 @@ function App() {
     <Container className="my-4">
       <Routes>    
         <Route path='/' element={<h1 className='m-2 underline'>Home</h1>}/>
-        <Route path='/new' element={<NewNote onSubmit={onCreateNote}/>}/>
+        <Route path='/new' element={<NewNote onSubmit={onCreateNote} onAddTag={function (tag: Tag): void {
+          throw new Error('Function not implemented.');
+        } } availableTags={[]}/>}/>
         <Route path='/:id'>
           <Route index element={<h1>Show</h1>}/>
           <Route path='edit' element={<h1>Edit</h1>}/>
